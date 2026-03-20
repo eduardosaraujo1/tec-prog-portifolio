@@ -13,4 +13,7 @@ public class Calculadora {
 	public double dividir(double n1, double n2) {
 		return n1 / n2;
 	}
+	public double media(double n1, double n2) {
+		return (n1+n2) / 2;
+	}
 }

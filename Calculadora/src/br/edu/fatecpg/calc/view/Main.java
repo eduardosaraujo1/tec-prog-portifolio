@@ -11,5 +11,6 @@ public class Main {
 		System.out.println("A subtração é: " + calc.subtrair(5, 2));
 		System.out.println("A multiplicação é: " + calc.multiplicar(5, 2));
 		System.out.println("A divisão é: " + calc.dividir(5, 2));
+		System.out.println("A média é: " + calc.media(5, 2));
 	}
 }
