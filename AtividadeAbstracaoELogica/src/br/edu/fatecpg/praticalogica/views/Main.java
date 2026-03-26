@@ -7,6 +7,11 @@ public class Main {
 	private static final Scanner scanner = new Scanner(System.in);
 	
 	public static void main(String[] args) {
+		exercicio1();
+		exercicio2();
+		exercicio3();
+		exercicio4();
+		exercicio5();
 		exercicio6();
 		exercicio7();
 		exercicio8();
@@ -27,7 +32,23 @@ public class Main {
 	//    Calcular a área do tampo
 	//    Calcular o perímetro (para acabamento com fita de borda)
 	public static void exercicio1() {
-		
+        System.out.println("=== Cálculo de Tampo de Mesa - Marcenaria ===");
+        System.out.print("Digite a largura do tampo (em metros): ");
+        double largura = scanner.nextDouble();
+        System.out.print("Digite a altura do tampo (em metros): ");
+        double altura = scanner.nextDouble();
+        
+        Retangulo tampo = new Retangulo(largura, altura);
+        
+        double area = tampo.calcularArea();
+        double perimetro = tampo.calcularPerimetro();
+        
+        System.out.println("\n=== Resultados ===");
+        System.out.printf("Área do tampo: %.4f m²%n", area);
+        System.out.printf("Perímetro do tampo: %.4f m%n", perimetro);
+        System.out.println("Quantidade de madeira necessária para o tampo: " + area + " m²");
+        System.out.println("Comprimento de fita de borda necessária: " + perimetro + " m");
+
 	}
 	// 🔹 2. RH de Empresa (Funcionário)
 	// Uma empresa deseja automatizar o cálculo de salários de seus funcionários.
@@ -37,7 +58,26 @@ public class Main {
 	//    Permitir aplicar um aumento percentual no salário
 	//    Calcular o salário anual do funcionário
 	public static void exercicio2() {
-		
+        System.out.println("=== Cálculo de Salário - RH da Empresa ===");
+        System.out.print("Digite o nome do funcionário: ");
+        String nome = scanner.nextLine();
+
+        System.out.print("Digite o salário inicial (R$): ");
+        double salarioInicial = scanner.nextDouble();
+
+        Funcionario funcionario = new Funcionario(nome, salarioInicial);
+
+        System.out.print("Digite o percentual de aumento (%): ");
+        double percentual = scanner.nextDouble();
+
+        funcionario.aplicarAumento(percentual);
+
+        double salarioAnual = funcionario.calcularSalarioAnual();
+
+        System.out.println("\n=== Resultados ===");
+        System.out.printf("Funcionário: %s%n", funcionario.getNome());
+        System.out.printf("Salário atual após aumento: R$ %.2f%n", funcionario.getSalario());
+        System.out.printf("Salário anual: R$ %.2f%n", salarioAnual);		
 	}
 	// 🔹 3. Banco Digital (Conta Bancária)
 	// Um banco digital precisa de um sistema simples para gerenciar contas de clientes.
@@ -47,7 +87,26 @@ public class Main {
 	//    Permitir depósitos e saques
 	//    Exibir o saldo atual após operações
 	public static void exercicio3() {
-		
+        System.out.println("=== Banco Digital - Conta Bancária ===");
+        System.out.print("Digite o nome do titular: ");
+        String titular = scanner.nextLine();
+
+        System.out.print("Digite o saldo inicial (R$): ");
+        double saldoInicial = scanner.nextDouble();
+
+        ContaBancaria conta = new ContaBancaria(titular, saldoInicial);
+
+        System.out.print("Digite o valor do depósito (R$): ");
+        double deposito = scanner.nextDouble();
+        conta.depositar(deposito);
+
+        System.out.print("Digite o valor do saque (R$): ");
+        double saque = scanner.nextDouble();
+        conta.sacar(saque);
+
+        System.out.println("\n=== Resultados ===");
+        System.out.printf("Titular: %s%n", conta.getTitular());
+        System.out.printf("Saldo atual: R$ %.2f%n", conta.getSaldo());
 	}
 	// 🔹 4. Controle de Estoque (Produto)
 	// Uma loja precisa controlar seu estoque de produtos.
@@ -57,7 +116,33 @@ public class Main {
 	//    Calcular o valor total em estoque
 	//    Permitir entrada e saída de produtos
 	public static void exercicio4() {
-		
+        System.out.println("=== Controle de Estoque - Loja ===");
+        System.out.print("Digite o nome do produto: ");
+        String nome = scanner.nextLine();
+
+        System.out.print("Digite o preço unitário (R$): ");
+        double preco = scanner.nextDouble();
+
+        System.out.print("Digite a quantidade inicial: ");
+        int quantidadeInicial = scanner.nextInt();
+
+        Produto produto = new Produto(nome, preco, quantidadeInicial);
+
+        System.out.print("Digite a quantidade de entrada: ");
+        int entrada = scanner.nextInt();
+        produto.entrada(entrada);
+
+        System.out.print("Digite a quantidade de saída: ");
+        int saida = scanner.nextInt();
+        produto.saida(saida);
+
+        double valorTotal = produto.calcularValorTotal();
+
+        System.out.println("\n=== Resultados ===");
+        System.out.printf("Produto: %s%n", produto.getNome());
+        System.out.printf("Quantidade atual: %d unidades%n", produto.getQuantidade());
+        System.out.printf("Valor total em estoque: R$ %.2f%n", valorTotal);
+
 	}
 	// 🔹 5. Sistema Escolar (Aluno)
 	// Uma escola deseja automatizar o cálculo de notas dos alunos.
@@ -67,7 +152,32 @@ public class Main {
 	//    Calcular a média final
 	//    Informar se o aluno foi aprovado (média ≥ 7)
 	public static void exercicio5() {
-		
+        System.out.println("=== Cálculo de Notas - Escola ===");
+        System.out.print("Digite o nome do aluno: ");
+        String nome = scanner.nextLine();
+
+        System.out.print("Digite a primeira nota: ");
+        double nota1 = scanner.nextDouble();
+
+        System.out.print("Digite a segunda nota: ");
+        double nota2 = scanner.nextDouble();
+
+        System.out.print("Digite a terceira nota: ");
+        double nota3 = scanner.nextDouble();
+
+        Aluno aluno = new Aluno(nome, nota1, nota2, nota3);
+
+        double media = aluno.calcularMedia();
+
+        System.out.println("\n=== Resultados ===");
+        System.out.printf("Aluno: %s%n", aluno.getNome());
+        System.out.printf("Média final: %.2f%n", media);
+
+        if (aluno.foiAprovado()) {
+            System.out.println("Situação: Aprovado");
+        } else {
+            System.out.println("Situação: Reprovado");
+        }
 	}
 	// ### PARTE DO EDUARDO SOARES
 	// 🔹 6. Aplicativo de Veículos (Carro)
