@@ -35,8 +35,10 @@ public class Main {
         System.out.println("=== Cálculo de Tampo de Mesa - Marcenaria ===");
         System.out.print("Digite a largura do tampo (em metros): ");
         double largura = scanner.nextDouble();
+        scanner.nextLine();
         System.out.print("Digite a altura do tampo (em metros): ");
         double altura = scanner.nextDouble();
+        scanner.nextLine();
         
         Retangulo tampo = new Retangulo(largura, altura);
         
@@ -64,11 +66,13 @@ public class Main {
 
         System.out.print("Digite o salário inicial (R$): ");
         double salarioInicial = scanner.nextDouble();
+        scanner.nextLine();
 
         Funcionario funcionario = new Funcionario(nome, salarioInicial);
 
         System.out.print("Digite o percentual de aumento (%): ");
         double percentual = scanner.nextDouble();
+        scanner.nextLine();
 
         funcionario.aplicarAumento(percentual);
 
@@ -93,15 +97,18 @@ public class Main {
 
         System.out.print("Digite o saldo inicial (R$): ");
         double saldoInicial = scanner.nextDouble();
+        scanner.nextLine();
 
         ContaBancaria conta = new ContaBancaria(titular, saldoInicial);
 
         System.out.print("Digite o valor do depósito (R$): ");
         double deposito = scanner.nextDouble();
+        scanner.nextLine();
         conta.depositar(deposito);
 
         System.out.print("Digite o valor do saque (R$): ");
         double saque = scanner.nextDouble();
+        scanner.nextLine();
         conta.sacar(saque);
 
         System.out.println("\n=== Resultados ===");
@@ -122,18 +129,22 @@ public class Main {
 
         System.out.print("Digite o preço unitário (R$): ");
         double preco = scanner.nextDouble();
+        scanner.nextLine();
 
         System.out.print("Digite a quantidade inicial: ");
         int quantidadeInicial = scanner.nextInt();
+        scanner.nextLine();
 
         Produto produto = new Produto(nome, preco, quantidadeInicial);
 
         System.out.print("Digite a quantidade de entrada: ");
         int entrada = scanner.nextInt();
+        scanner.nextLine();
         produto.entrada(entrada);
 
         System.out.print("Digite a quantidade de saída: ");
         int saida = scanner.nextInt();
+        scanner.nextLine();
         produto.saida(saida);
 
         double valorTotal = produto.calcularValorTotal();
@@ -158,12 +169,15 @@ public class Main {
 
         System.out.print("Digite a primeira nota: ");
         double nota1 = scanner.nextDouble();
+        scanner.nextLine();
 
         System.out.print("Digite a segunda nota: ");
         double nota2 = scanner.nextDouble();
+        scanner.nextLine();
 
         System.out.print("Digite a terceira nota: ");
         double nota3 = scanner.nextDouble();
+        scanner.nextLine();
 
         Aluno aluno = new Aluno(nome, nota1, nota2, nota3);
 
@@ -296,22 +310,15 @@ public class Main {
 		p.classificarResultado(imc);
 	}
 	
-	// Funções para reduzir boilerplate de código
-	// private static int intInput(String mensagem) {
-	//	 System.out.print(mensagem);
-	//	
-	//	 return scanner.nextInt();
-	// }
-	
 	private static double doubleInput(String mensagem) {
 		System.out.print(mensagem);
 		
-		return scanner.nextDouble();
+		return Double.parseDouble(scanner.nextLine());
 	}
 	
 	private static String strInput(String mensagem) {
 		System.out.print(mensagem);
 		
-		return scanner.next();
+		return scanner.nextLine();
 	}
 }
