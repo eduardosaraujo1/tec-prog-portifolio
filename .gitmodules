@@ -1,0 +1,9 @@
+[submodule "java-vetor-exercicio"]
+	path = java-vetor-exercicio
+	url = https://github.com/eduardosaraujo1/java-vetor-exercicio
+[submodule "java-estrutura-repeticao"]
+	path = java-estrutura-repeticao
+	url = https://github.com/eduardosaraujo1/java-estrutura-repeticao
+[submodule "java-if-else"]
+	path = java-if-else
+	url = https://github.com/eduardosaraujo1/java-if-else
