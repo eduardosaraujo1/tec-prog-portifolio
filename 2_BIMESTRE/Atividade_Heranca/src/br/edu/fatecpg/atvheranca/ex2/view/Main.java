@@ -1,5 +1,7 @@
 package br.edu.fatecpg.atvheranca.ex2.view;
 
+import br.edu.fatecpg.atvheranca.ex2.model.*;
+
 /*
  * [2]
  * Interface de Pagamentos
@@ -21,5 +23,23 @@ package br.edu.fatecpg.atvheranca.ex2.view;
  * duas formas de pagamento, calculando o valor final e emitindo um recibo.
  */
 public class Main {
+    public static void main(String[] args) {
+        PagamentoCartao pc = new PagamentoCartao(100, "1234567891234567");
+        PagamentoDinheiro pd = new PagamentoDinheiro(100);
 
+        exibirPagamento(pc);
+        exibirPagamento(pd);
+    }
+
+    private static void exibirPagamento(IPagamento pgto) {
+        System.out.println("[PAGAMENTO EM CARTÃO]\n"
+                + pgto.calcularPagamento() + "\n"
+                + "[RECIBO]\n"
+                + pgto.emitirRecibo());
+        System.out.println("[PAGAMENTO EM DINHEIRO]\n"
+                + pgto.calcularPagamento() + "\n"
+                + "[RECIBO]"
+                + pgto.emitirRecibo());
+
+    }
 }

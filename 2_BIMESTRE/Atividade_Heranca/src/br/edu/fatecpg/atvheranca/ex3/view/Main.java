@@ -1,5 +1,9 @@
 package br.edu.fatecpg.atvheranca.ex3.view;
 
+import java.util.Scanner;
+
+import br.edu.fatecpg.atvheranca.ex3.model.SistemaDeSeguranca;
+
 /*
  * [3]
  * Interface Autenticavel
@@ -23,5 +27,37 @@ package br.edu.fatecpg.atvheranca.ex3.view;
  * até acertar. O sistema também deve permitir fazer o logout.
 */
 public class Main {
+    private static final Scanner scanner = new Scanner(System.in);
 
+    public static void main(String[] args) {
+        SistemaDeSeguranca sistema = new SistemaDeSeguranca();
+
+        while (!sistema.autenticado()) {
+            System.out.print("Usuário: ");
+            String usuario = scanner.nextLine();
+
+            System.out.print("Senha: ");
+            String senha = scanner.nextLine();
+
+            if (sistema.login(usuario, senha)) {
+                System.out.printf("Bem-vindo, %s!", usuario);
+            } else {
+                System.out.println("Usuário ou senha incorretos. Tente novamente.\n");
+            }
+        }
+
+        System.out.println("\nDigite 'q' para sair.");
+
+        while (sistema.autenticado()) {
+            String comando = scanner.nextLine();
+
+            if (comando.equals("q")) {
+                sistema.logout();
+            } else {
+                System.out.println("Valor inválido.");
+            }
+        }
+
+        scanner.close();
+    }
 }
