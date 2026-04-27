@@ -1,7 +1,9 @@
 package br.edu.fatecpg.polimorfismo.ex3.view;
 
 public class Main {
-
+    public static void main(String[] args) {
+        System.out.println("Hello, World(3)");
+    }
 }
 
 /*
@@ -13,11 +15,9 @@ public class Main {
  * ● O terceiro deve receber um nome, um preço e uma quantidade em estoque
  * (int).
  * ● Instancie objetos da classe Produto utilizando cada um dos construtores e
- * imprima
- * as informações dos produtos.
+ * imprima as informações dos produtos.
  * Pergunta:
  * Discuta como a sobrecarga de construtores facilita a criação de objetos com
- * diferentes
- * conjuntos de informações, permitindo flexibilidade na instânciação de
- * objetos.
+ * diferentes conjuntos de informações, permitindo flexibilidade na instânciação
+ * de objetos.
  */
