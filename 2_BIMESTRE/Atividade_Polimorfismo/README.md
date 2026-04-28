@@ -8,7 +8,7 @@ Segue abaixo as respostas das perguntas feitas nas questões:
 
 ### 2. Descreva o mecanismo de sobrecarga de métodos e como ele difere da sobrescrita em termos de polimorfismo.
 
-**Resposta:** A sobrecarga de métodos é uma funcionalidade que permite que funções com o mesmo nome sejam distinguidas pela sua assinatura, seja pelos parâmetros ou pelo tipo de retorno. [\.\.\.]
+**Resposta:** A sobrecarga de métodos é uma funcionalidade de linguagens orientadas a objeto que permitem funções com o mesmo nome serem distinguidas pela sua assinatura, isto é, pelos parâmetros e/ou tipo de retorno. Isso difere do _override_ no polimorfismo, que substitui um método por outro com a mesma assinatura, e tem como um de seus usos possibilitar que uma mesma função possa executar fluxos diferentes por meio de _upcasting_ e injeção de dependência.
 
 ### 3. Discuta como a sobrecarga de construtores facilita a criação de objetos com diferentes conjuntos de informações, permitindo flexibilidade na instânciação de objetos.
 

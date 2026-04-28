@@ -1,8 +1,12 @@
 package br.edu.fatecpg.polimorfismo.ex3.view;
 
+import br.edu.fatecpg.polimorfismo.ex3.model.*;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World(3)");
+        Produto p1 = new Produto("Laptop");
+        Produto p2 = new Produto("Mouse", 59.99);
+        Produto p3 = new Produto("Monitor", 59.99, 40);
     }
 }
 
