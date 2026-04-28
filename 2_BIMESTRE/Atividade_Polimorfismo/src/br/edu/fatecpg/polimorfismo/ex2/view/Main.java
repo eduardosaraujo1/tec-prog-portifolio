@@ -1,8 +1,17 @@
 package br.edu.fatecpg.polimorfismo.ex2.view;
 
+import br.edu.fatecpg.polimorfismo.ex2.model.*;;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World(2)");
+        Calculadora c = new Calculadora();
+        int x = c.somar(2, 3); // 5
+        int y = c.somar(5, 4, 3); // 12
+        double z = c.somar(3.1, 5.33); // 8.43
+
+        System.out.printf("int somar(int,int): %s\n"
+                + "int somar(int,int,int): %s\n"
+                + "double somar(double,double): %s\n", x, y, z);
     }
 }
 

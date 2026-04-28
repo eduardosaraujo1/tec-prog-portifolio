@@ -6,7 +6,9 @@ public class Main {
     public static void main(String[] args) {
         Bicicleta b = new Bicicleta();
         Carro c = new Carro();
-        moverVeiculos(new Veiculo[] { b, c });
+        Veiculo[] veiculos = { b, c };
+
+        moverVeiculos(veiculos);
     }
 
     private static void moverVeiculos(Veiculo[] v) {
