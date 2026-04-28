@@ -1,8 +1,18 @@
 package br.edu.fatecpg.polimorfismo.ex1.view;
 
+import br.edu.fatecpg.polimorfismo.ex1.model.*;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World(1)");
+        Bicicleta b = new Bicicleta();
+        Carro c = new Carro();
+        moverVeiculos(new Veiculo[] { b, c });
+    }
+
+    private static void moverVeiculos(Veiculo[] v) {
+        for (Veiculo ve : v) {
+            ve.mover();
+        }
     }
 }
 

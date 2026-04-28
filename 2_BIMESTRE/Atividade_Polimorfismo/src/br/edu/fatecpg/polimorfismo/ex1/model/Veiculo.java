@@ -1,5 +1,7 @@
 package br.edu.fatecpg.polimorfismo.ex1.model;
 
-public class Veiculo {
-
+public abstract class Veiculo {
+    public void mover() {
+        System.out.println("Movendo veículo...");
+    }
 }
