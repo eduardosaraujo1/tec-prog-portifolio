@@ -12,7 +12,7 @@ Segue abaixo as respostas das perguntas feitas nas questões:
 
 ### 3. Discuta como a sobrecarga de construtores facilita a criação de objetos com diferentes conjuntos de informações, permitindo flexibilidade na instânciação de objetos.
 
-**Resposta:**
+**Resposta:** A sobrecarga de construtores permite que um objeto seja instanciado com diferentes atributos em seu construtor, permitindo, de forma geral, diferentes comportamentos a depender dos parametros passados no método. Por exemplo, a sobrecarga de construtores permite que parametros opcionais sejam omitidos na construção.
 
 ### 4. Como o polimorfismo por sobrescrita facilita a implementação de diferentes formas de pagamento dentro de um sistema sem alterar o código da classe base?
 

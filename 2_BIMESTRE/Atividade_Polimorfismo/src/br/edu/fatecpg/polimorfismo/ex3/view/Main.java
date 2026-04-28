@@ -7,6 +7,11 @@ public class Main {
         Produto p1 = new Produto("Laptop");
         Produto p2 = new Produto("Mouse", 59.99);
         Produto p3 = new Produto("Monitor", 59.99, 40);
+
+        // Olha o overloading aqui: println recebe String, int, double, objeto e mais
+        System.out.println(p1);
+        System.out.println(p2);
+        System.out.println(p3);
     }
 }
 
