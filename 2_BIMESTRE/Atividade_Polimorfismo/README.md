@@ -20,4 +20,4 @@ Segue abaixo as respostas das perguntas feitas nas questões:
 
 ### 5. Explique como a sobrecarga de métodos permite implementar várias versões do método converter(), mesmo com diferentes tipos de dados e funcionalidades.
 
-**Resposta:**
+**Resposta:** Justamente por terem diferentes tipos de dados, é possível implementar diferentes funcionalidades sobre o nome do mesmo método (converter). A sobrecarga funciona através da identificação da assinatura apropriada da função no momento em que é chamada. Não é recomendado criar sobrecargas para funções que possuem o mesmo tipo de dado na entrada, como é o caso de 'temperatura' e 'distância' (ambos decimal), embora isso seja possível através da diferenciação de assinaturas 'float' e 'double'. O ideal é criar diferentes nomes para as funções.

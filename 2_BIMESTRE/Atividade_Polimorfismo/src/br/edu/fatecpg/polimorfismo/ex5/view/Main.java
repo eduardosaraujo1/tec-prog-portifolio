@@ -1,9 +1,18 @@
 package br.edu.fatecpg.polimorfismo.ex5.view;
 
+import br.edu.fatecpg.polimorfismo.ex5.model.Conversor;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello, World(5)");
+        final Conversor c = new Conversor();
+        System.out.printf(
+                "40 graus celsius para Fahrenheit: %f\n"
+                        + "60 quilômetros para milhas: %f\n"
+                        + "String 'ola,mundo' para UPPERCASE: %s\n",
+                c.converter(40d),
+                c.converter(40f),
+                c.converter("ola,mundo"));
     }
 }
 
