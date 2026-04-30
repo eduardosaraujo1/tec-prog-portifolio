@@ -1,8 +1,20 @@
 package br.edu.fatecpg.polimorfismo.ex4.view;
 
+import br.edu.fatecpg.polimorfismo.ex4.model.*;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World(4)");
+        PagamentoBoleto pb = new PagamentoBoleto();
+        PagamentoCartao pc = new PagamentoCartao();
+
+        pagar(100.0, pb);
+        pagar(100.0, pc);
+    }
+
+    private static void pagar(double valor, Pagamento pgto) {
+        System.out.printf("Realizando pagamento de R$%.2f...\n", valor);
+        pgto.processarPagamento();
+        System.out.print("Pagamento realizado com êxito.\n");
     }
 }
 

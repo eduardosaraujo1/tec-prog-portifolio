@@ -16,7 +16,9 @@ Segue abaixo as respostas das perguntas feitas nas questões:
 
 ### 4. Como o polimorfismo por sobrescrita facilita a implementação de diferentes formas de pagamento dentro de um sistema sem alterar o código da classe base?
 
-**Resposta:**
+**Resposta:** A sobrescrita não necessariamente facilita a implementação de diferentes formas de pagamento no sentido de escrita de código, mas facilita seu uso futuro em futuras implementações de dependências desse sistema. Sem o uso de polimorfismo, não haveria uma garantia de que o método 'processarPagamento' existe para um pagamento, causando maiores refactorações quando um novo meio de pagamento não possuir esse método.
+
+Aplicando o esforço de escrever uma classe genérica para pagamento, a troca entre as implementações "Boleto" e "Cartão" se tornam triviais, e caso um novo método de pagamento seja criado, ele herdará o comportamento genérico sem erros (o que é indesejável nessa situação, uma interface seria melhor pois um erro de compilação avisaria o desenvolvedor que o método de pagamento precisa de uma implementação própria).
 
 ### 5. Explique como a sobrecarga de métodos permite implementar várias versões do método converter(), mesmo com diferentes tipos de dados e funcionalidades.
 
