@@ -2,6 +2,8 @@ package br.edu.fatecpg.streamlambda;
 
 import br.edu.fatecpg.streamlambda.model.Produto;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class App {
 
@@ -26,6 +28,38 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Produto("Teste", "Teste", 9));
+        List<Produto> produtos = gerarLista();
+
+        System.out.println("==== Eletrônicos com 10% de Desconto ====");
+        produtos
+            .stream()
+            .filter(p -> p.getCategoria().equalsIgnoreCase("eletronico"))
+            .map(p ->
+                new Produto(p.getNome(), p.getCategoria(), p.getPreco() * 0.9)
+            )
+            .sorted((p0, p1) -> p0.getPreco() > p1.getPreco() ? -1 : 1)
+            .forEach(System.out::println);
+        System.out.println("---");
+
+        System.out.println("==== Total de roupas ====");
+        double totalRoupa = produtos
+            .stream()
+            .filter(p -> p.getCategoria().equalsIgnoreCase("roupas"))
+            .mapToDouble(p -> p.getPreco())
+            .reduce(0.0, Double::sum);
+        System.out.println("Total: " + totalRoupa);
+        System.out.println("---");
+
+        System.out.println("==== Agrupamento por Categoria ====");
+        produtos
+            .stream()
+            .collect(
+                Collectors.groupingBy(
+                    Produto::getCategoria,
+                    Collectors.averagingDouble(Produto::getPreco)
+                )
+            )
+            .forEach((cat, val) -> System.out.printf("%s: R$%.2f\n", cat, val));
+        System.out.println("---");
     }
 }
