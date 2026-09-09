@@ -1,8 +1,8 @@
 package br.edu.fatecpg.streamlambda;
 
 import br.edu.fatecpg.streamlambda.model.Produto;
+import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class App {
@@ -37,7 +37,7 @@ public class App {
             .map(p ->
                 new Produto(p.getNome(), p.getCategoria(), p.getPreco() * 0.9)
             )
-            .sorted((p0, p1) -> p0.getPreco() > p1.getPreco() ? -1 : 1)
+            .sorted(Comparator.comparingDouble(Produto::getPreco))
             .forEach(System.out::println);
         System.out.println("---");
 
